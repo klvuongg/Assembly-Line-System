@@ -1,0 +1,41 @@
+# Ignore Visual Studio solution and project files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore build and intermediate files
+*.obj
+*.exe
+*.dll
+*.pdb
+*.idb
+*.ilk
+*.lib
+*.exp
+*.ncb
+*.sdf
+*.ipch
+*.cache
+*.tlog
+*.log
+
+# Ignore VS Code settings (if using VS Code)
+.vscode/
+.vs/
+
+# Ignore CMake and Make build files (if applicable)
+CMakeCache.txt
+CMakeFiles/
+Makefile
+CMakeLists.txt.user
+
+# Ignore generated directories
+bin/
+debug/
+Debug/
+release/
+Release/
+x64/
+x86/
+ipch/
