@@ -1,3 +1,16 @@
+/*
+* Name: Kaitlyn Vuong
+* Email: klvuong@myseneca.ca
+* Student ID: 165190224
+* Date: April 2, 2025
+*
+* I declare that this submission is the result of my own work
+and I only copied the code that my professor provided to
+complete my assignments. This submitted piece of work has
+not been shared with any other student or 3rd party content
+provider.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
@@ -21,7 +34,9 @@ namespace seneca {
 		while (std::getline(fin, line)) {
 			std::istringstream rec(line);
 			std::getline(rec, currentStation, '|');
-			std::getline(rec, nextStation, '|');
+			if (!std::getline(rec, nextStation, '|')) {
+				nextStation.clear();
+			};
 			stationPair.emplace_back(currentStation, nextStation);
 		}
 		fin.close();
@@ -64,9 +79,9 @@ namespace seneca {
 
 	bool LineManager::run(std::ostream& os)
 	{
-		static size_t cnt = 0;
+		static size_t cnt = 1;
 
-		os << "Line Manager Iteration: " << cnt << endl;
+		os << "Line Manager Iteration: " << cnt++ << endl;
 
 		if (!g_pending.empty()) {
 			*m_firstStation += std::move(g_pending.front());

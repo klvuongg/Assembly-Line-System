@@ -14,3 +14,12 @@ provider.
 tester_1:
 Fixed trimming conditions in extractToken function in Utilities.cpp
 Fixed formatting problems in display function in Station.cpp
+
+tester_2:
+Fixed error in move assignment in CustomerOrder.cpp
+Fixed formatting in display function in CustomerOrder.cpp
+
+tester_3:
+Fixed function's logic in fillItem function in CustomerOrder.cpp to return when it's filled but not when it's not able to fill
+Added validation to correctly read the second station in LineManager.cpp
+Fixed formatting in display function to correctly display serial number in CustomerOrder.cpp

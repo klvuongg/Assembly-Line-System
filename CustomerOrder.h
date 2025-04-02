@@ -34,6 +34,15 @@ namespace seneca {
 	public: 
 		CustomerOrder() {};
 		CustomerOrder(const std::string& str);
+		size_t getItemCount() const { return m_cntItem; }
+
+		const std::string& getItemName(size_t index) const {
+			return m_lstItem[index]->m_itemName;
+		}
+
+		bool isItemFilled(size_t index) const {
+			return m_lstItem[index]->m_isFilled;
+		}
 		CustomerOrder(const CustomerOrder&);
 		CustomerOrder& operator=(const CustomerOrder&) = delete;
 		CustomerOrder(CustomerOrder&&) noexcept;

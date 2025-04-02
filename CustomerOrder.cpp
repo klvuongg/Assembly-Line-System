@@ -110,12 +110,12 @@ namespace seneca {
 					station.updateQuantity();
 					m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
 					m_lstItem[i]->m_isFilled = true;
-					os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "] " << endl;
+					os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
+					return;
 				}
 				else {
 					os << "    Unable to fill " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << std::endl;
 				}
-				return;
 			}
 		}
 	}
@@ -124,7 +124,7 @@ namespace seneca {
 	{
 		os << m_name << " - " << m_product << endl;
 		for (size_t i = 0; i < m_cntItem; i++) {
-			os << "[" << setw(6) << setfill('0') << m_lstItem[i]->m_serialNumber << "] "
+			os << "[" << std::right << setw(6) << setfill('0') << m_lstItem[i]->m_serialNumber << "] "
 				<< setfill(' ') << setw(m_widthField) << left << m_lstItem[i]->m_itemName << " - "
 				<< (m_lstItem[i]->m_isFilled ? "FILLED" : "TO BE FILLED") << endl;
 		}
