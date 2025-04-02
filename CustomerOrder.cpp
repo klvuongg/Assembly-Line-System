@@ -1,3 +1,16 @@
+/*
+* Name: Kaitlyn Vuong
+* Email: klvuong@myseneca.ca
+* Student ID: 165190224
+* Date: April 2, 2025
+*
+* I declare that this submission is the result of my own work
+and I only copied the code that my professor provided to
+complete my assignments. This submitted piece of work has
+not been shared with any other student or 3rd party content
+provider.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "CustomerOrder.h"
 #include "Utilities.h"
@@ -42,7 +55,7 @@ namespace seneca {
 		*this = std::move(src);
 	}
 
-	CustomerOrder CustomerOrder::operator=(CustomerOrder&& src) noexcept 
+	CustomerOrder& CustomerOrder::operator=(CustomerOrder&& src) noexcept 
 	{
 		if (this != &src) {
 			for (size_t i = 0; i < m_cntItem; i++) {
@@ -99,19 +112,16 @@ namespace seneca {
 					m_lstItem[i]->m_isFilled = true;
 				}
 				os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "] " << endl;
-			}
-			else {
-				os << "    Unable to fill " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "] " << endl;
+				return;
 			}
 		}
-		return;
 	}
 
 	void CustomerOrder::display(std::ostream& os) const
 	{
 		os << m_name << " - " << m_product << endl;
 		for (size_t i = 0; i < m_cntItem; i++) {
-			os << "[ " << setw(6) << setfill('0') << m_lstItem[i]->m_serialNumber << " ]"
+			os << "[" << setw(6) << setfill('0') << m_lstItem[i]->m_serialNumber << "] "
 				<< setfill(' ') << setw(m_widthField) << left << m_lstItem[i]->m_itemName << " - "
 				<< (m_lstItem[i]->m_isFilled ? "FILLED" : "TO BE FILLED") << endl;
 		}

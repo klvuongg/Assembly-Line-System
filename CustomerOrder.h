@@ -1,3 +1,16 @@
+/*
+* Name: Kaitlyn Vuong
+* Email: klvuong@myseneca.ca
+* Student ID: 165190224
+* Date: April 2, 2025
+*
+* I declare that this submission is the result of my own work
+and I only copied the code that my professor provided to
+complete my assignments. This submitted piece of work has
+not been shared with any other student or 3rd party content
+provider.
+*/
+
 #ifndef SENECA_CUSTOMERORDER_H
 #define SENECA_CUSTOMERORDER_H
 #include "Station.h"
@@ -22,9 +35,9 @@ namespace seneca {
 		CustomerOrder() {};
 		CustomerOrder(const std::string& str);
 		CustomerOrder(const CustomerOrder&);
-		CustomerOrder operator=(const CustomerOrder&) = delete;
+		CustomerOrder& operator=(const CustomerOrder&) = delete;
 		CustomerOrder(CustomerOrder&&) noexcept;
-		CustomerOrder operator=(CustomerOrder&&) noexcept;
+		CustomerOrder& operator=(CustomerOrder&&) noexcept;
 		~CustomerOrder();
 		bool isOrderFilled() const;
 		bool isItemFilled(const std::string& itemName) const;
