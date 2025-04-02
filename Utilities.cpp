@@ -1,3 +1,16 @@
+/*
+* Name: Kaitlyn Vuong
+* Email: klvuong@myseneca.ca
+* Student ID: 165190224
+* Date: April 2, 2025
+*
+* I declare that this submission is the result of my own work
+and I only copied the code that my professor provided to
+complete my assignments. This submitted piece of work has
+not been shared with any other student or 3rd party content
+provider.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "Utilities.h"
 #include <iostream>
@@ -44,8 +57,8 @@ namespace seneca {
 			more = true;
 		}
 
-		size_t start = token.find_first_not_of("");
-		size_t end = token.find_last_not_of("");
+		size_t start = token.find_first_not_of(" \t\n\r");
+		size_t end = token.find_last_not_of(" \t\n\r");
 		token = (start == std::string::npos) ? "" : token.substr(start, end - start + 1);
 
 		if (token.length() > m_widthField) {

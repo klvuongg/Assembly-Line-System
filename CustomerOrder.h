@@ -1,5 +1,5 @@
-#ifndef CUSTOMERORDER_H
-#define CUSTOMERORDER_H
+#ifndef SENECA_CUSTOMERORDER_H
+#define SENECA_CUSTOMERORDER_H
 #include "Station.h"
 #include <string>
 

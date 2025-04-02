@@ -1,3 +1,16 @@
+/*
+* Name: Kaitlyn Vuong
+* Email: klvuong@myseneca.ca
+* Student ID: 165190224
+* Date: April 2, 2025
+*
+* I declare that this submission is the result of my own work
+and I only copied the code that my professor provided to
+complete my assignments. This submitted piece of work has
+not been shared with any other student or 3rd party content
+provider.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "Station.h"
 #include "Utilities.h"
@@ -8,7 +21,8 @@ using namespace std;
 namespace seneca {
 	size_t Station::m_widthField = 0;
 	size_t Station::id_generator = 0;
-	Station::Station(const std::string& record)
+
+	Station::Station(const std::string& record) : id(++id_generator)
 	{
 		Utilities utilities;
 		size_t next_pos = 0;
@@ -48,12 +62,17 @@ namespace seneca {
 
 	void Station::display(std::ostream& os, bool full) const
 	{
-		os << setw(3) << setfill('0') << id << " | " << left << setw(m_widthField) << setfill(' ') << item_name << " | " << right << setw(6) << setfill('0') << serial_num << " | ";
-		
+		os.fill(' ');
+		os.unsetf(ios::adjustfield);
+
+		os << std::right << std::setw(3) << std::setfill('0') << id << " | "
+			<< std::left << std::setw(m_widthField) << std::setfill(' ') << item_name << " | "
+			<< std::right << std::setw(6) << std::setfill('0') << serial_num << " | ";
+
 		if (full) {
-			os << setw(4) << setfill(' ') << quantity << " | " << desc;
+			os << std::right << std::setw(4) << std::setfill(' ') << quantity << " | " << std::left << desc;
 		}
 
-		os << endl;
+		os << std::endl;
 	}
 }

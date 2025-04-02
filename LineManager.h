@@ -1,5 +1,5 @@
-#ifndef LINEMANAGER_H
-#define LINEMANAGER_H
+#ifndef SENECA_LINEMANAGER_H
+#define SENECA_LINEMANAGER_H
 #include "Workstation.h"
 #include <vector>
 

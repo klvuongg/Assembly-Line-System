@@ -1,5 +1,5 @@
-#ifndef WORKSTATION_H
-#define WORKSTATION_H
+#ifndef SENECA_WORKSTATION_H
+#define SENECA_WORKSTATION_H
 #include "CustomerOrder.h"
 #include <deque>
 
