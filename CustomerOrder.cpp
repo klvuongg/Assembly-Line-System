@@ -110,8 +110,11 @@ namespace seneca {
 					station.updateQuantity();
 					m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
 					m_lstItem[i]->m_isFilled = true;
+					os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "] " << endl;
 				}
-				os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "] " << endl;
+				else {
+					os << "    Unable to fill " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << std::endl;
+				}
 				return;
 			}
 		}
